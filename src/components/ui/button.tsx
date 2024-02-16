@@ -1,24 +1,23 @@
-import { forwardRef } from 'react';
-import cn from 'clsx';
+import { forwardRef } from "react";
+import cn from "clsx";
 
-import type { ComponentPropsWithRef } from 'react';
-import { Loading } from './loading';
+import type { ComponentPropsWithRef } from "react";
+import { Loading } from "./loading";
 
-type ButtonProps = ComponentPropsWithRef<'button'> & {
+type ButtonProps = ComponentPropsWithRef<"button"> & {
   loading?: boolean;
 };
 
 // eslint-disable-next-line react/display-name
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, loading, disabled, children, ...rest }, ref) => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     const isDisabled = loading || disabled;
 
     return (
       <button
         className={cn(
-          'custom-button main-tab',
-          loading && 'relative !text-transparent disabled:cursor-wait',
+          "custom-button main-tab",
+          loading && "relative !text-transparent disabled:cursor-wait",
           className
         )}
         type="button"
