@@ -1,0 +1,120 @@
+@use 'fonts';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-background: 0 0 0;
+  --dim-background: 22 33 44;
+  --light-background: 255 255 255;
+
+  --dark-search-background: 32 35 39;
+  --dim-search-background: 39 51 64;
+  --light-search-background: 239 243 244;
+
+  --dark-sidebar-background: 22 24 28;
+  --dim-sidebar-background: 30 39 50;
+  --light-sidebar-background: 247 249 249;
+  --tw-bg-opacity:1;
+  --tw-text-opacity:1;
+  --accent-yellow: 255 213 0;
+  --accent-blue: 29 155 240;
+  --accent-pink: 249 26 130;
+  --accent-purple: 120 87 255;
+  --accent-orange: 255 122 0;
+  --accent-green: 0 184 122;
+}
+
+a,
+input,
+button,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: rgb(var(--main-background)/var(--tw-bg-opacity));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(231 233 234/var(--tw-text-opacity));
+}
+/* .dark {
+  color: rgb(231 233 234/var(--tw-text-opacity))
+} */
+.hover-animation {
+  transition-property: color, background-color, border-color, box-shadow, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-button {
+  border-radius: 9999px;
+  padding: 0.75rem;
+}
+
+.custom-button:hover,
+.custom-button:focus {
+  background-color: var(--light-primary);
+}
+
+.custom-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.custom-underline {
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.custom-underline:hover,
+.custom-underline:focus {
+  text-decoration: underline;
+}
+
+.main-tab,
+.accent-tab {
+  outline: none;
+}
+
+.main-tab:focus-visible,
+.accent-tab:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.blur-picture {
+  transition: brightness 0.2s;
+}
+
+.blur-picture:hover,
+.blur-picture:focus {
+  filter: brightness(75%);
+}
+
+.trim-alt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.hover-card {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.hover-card:hover,
+.hover-card:focus {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.menu-container {
+  z-index: 10;
+  border-radius: 0.375rem;
+  background-color: var(--main-background);
+  box-shadow: 0px 0px 15px rgba(101, 119, 134, 0.2), 0px 0px 3px 1px rgba(101, 119, 134, 0.15);
+}
+
+.dark .menu-container {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2), 0px 0px 3px 1px rgba(255, 255, 255, 0.15);
+}
